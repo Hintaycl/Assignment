@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <title>Get the latest Tags</title>
+        <style> 
+            body {
+                padding: 0; margin: 0;
+            } 
+
+            canvas {
+                vertical-align: top;
+            }
+
+            .collapsible {
+                background-color: rgb(0, 132, 255);
+                color: white;
+                cursor: pointer;
+                padding: 18px;
+                width: 100%;
+                border:black;
+                text-align: left;
+                outline:medium;
+                outline-color: black;
+                font-size: 15px;
+            }
+
+            .active, .collapsible:hover {
+                background-color: rgb(0, 60, 255);
+            }
+
+            .content {
+                padding: 0 18px;
+                display:block;
+                overflow: hidden;
+                background-color: rgb(255, 255, 255);
+            }
+
+            .answers {
+                background-color: rgb(77, 77, 77);
+                color: white;
+            }
+
+            a:link {
+                color:rgb(0, 132, 255);
+            }
+        </style>
+    </head>
+    <body>
+        <label for="inputTag">Tag:</label>
+        <input type="text" id="inputTag" value="" />
+        <button onclick="submitTag('inputTag')" id="submitButton">Submit Tag</button>
+        <br>
+        <h1>Newest Questions</h1>
+        <div id="QuestionsDiv"></div>
+        <h1>Top 10 Voted Questions</h1>
+        <div id="VotedQuestionsDiv"></div>
+
+        
+        <script type="text/javascript">
+            // var coll = document.getElementsByClassName("collapsible");
+            // var i;
+            // console.log("doe123123123123123st it reach here");
+            // for (i = 0; i < coll.length; i++) {
+            //     console.log("does123123t it reach here");
+            //     coll[i].addEventListener("click", function() {
+            //         this.classList.toggle("active");
+            //         var content = this.nextElementSibling;
+            //         console.log("doest it reach here");
+            //         if (content.style.display === "block") {
+            //         content.style.display = "none";
+            //         } else {
+            //         content.style.display = "block";
+            //         }
+            //     });
+            // }
+
+            // var allCollapsibles = document.getElementsByClassName("collapsible");
+
+            // for(var i = 0; i < allCollapsibles.length; i++)
+            // {
+            //     allCollapsibles[i].onclick=function()
+            //     {
+                    
+            //         var childList = this.parentNode.getElementById('listItemBody');
+            //         // for(var j = 0; j< childList.length;j++)
+            //         // {
+            //         var currentState = childList.style.display;
+            //         if(currentState=="none")
+            //         {
+            //             childList.style.display="block";
+            //         }
+            //         else
+            //         {
+            //             childList.style.display="none";
+            //         }
+            //         // }
+                    
+            //     }
+            // }
+        </script>
+        <script src="assignment.js" type="text/javascript"></script>
+    </body>
+</html>
