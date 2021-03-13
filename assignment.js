@@ -77,6 +77,7 @@ function get10NewestQuestions(input) {
 
                 for(answer of jsonItem.answers) {
                     var answersHeader = document.createElement('div');
+                    answersHeader.setAttribute('class', 'answerHeader');
                     listItemBody.appendChild(answersHeader);    
 
                     //answers creation date and vote
