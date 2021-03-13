@@ -67,9 +67,23 @@ function get10NewestQuestions(input) {
             questionBody.innerHTML = jsonItem.body;
 
             //question body comments and its creation date and vote
-            // var questionComments = document.createElement('div');
-            // listItemBody.appendChild(questionComments);
-            // questionComments.innerHTML = jsonItem.comments.body;
+            if(jsonItem.hasOwnProperty('comments')) {
+                for(comment of jsonItem.comments) {
+                    var questionComments = document.createElement('div');
+                    questionComments.setAttribute('class', 'commentHeader');
+                    listItemBody.appendChild(questionComments);    
+
+                    //comment creation date and vote
+                    var convertedCommentDate = convertTime(comment.creation_date);
+                    questionComments.textContent = `Comment: Votes: [${comment.score}] Creation date: ${convertedCommentDate}`
+
+                    //comment body
+                    var commentBody = document.createElement('div');
+                    commentBody.setAttribute('class', 'comments');
+                    listItemBody.appendChild(commentBody);
+                    commentBody.innerHTML = comment.body;
+                }
+            }
 
 
             //its answers
@@ -89,6 +103,24 @@ function get10NewestQuestions(input) {
                     answersBody.setAttribute('class', 'answers');
                     listItemBody.appendChild(answersBody);
                     answersBody.innerHTML = answer.body;
+
+                    // for(comment of answer.comments) {
+                    //     //answers comments headers
+                    //     var answersCommentsHeader = document.createElement('div');
+                    //     answersCommentsHeader.setAttribute('class', 'answersCommentHeader');
+                    //     listItemBody.appendChild(answersCommentsHeader);    
+
+                    //     //answers comment creation date and vote
+                    //     var convertedCommentAnswerDate = convertTime(comment.creation_date);
+                    //     answersCommentsHeader.textContent = `Answer: Votes: [${comment.score}] Creation date: ${convertedconvertedCommentAnswerDateAnswerDate}`
+
+                    //     //answers comments
+                    //     var answersComments = document.createElement('div');
+                    //     answersComments.setAttribute('class', 'answersComments');
+                    //     listItemBody.appendChild(answersComments);
+                    //     answersComments.innerHTML = comment.body;
+                    // }
+                    
                 }
             }
         }
@@ -135,9 +167,23 @@ function get10PopularQuestions(input) {
             questionBody.innerHTML = jsonItem.body;
 
             //question body comments and its creation date and vote
-            // var questionComments = document.createElement('div');
-            // listItemBody.appendChild(questionComments);
-            // questionComments.innerHTML = jsonItem.comments.body;
+            if(jsonItem.hasOwnProperty('comments')) {
+                for(comment of jsonItem.comments) {
+                    var questionComments = document.createElement('div');
+                    questionComments.setAttribute('class', 'commentHeader');
+                    listItemBody.appendChild(questionComments);    
+
+                    //comment creation date and vote
+                    var convertedCommentDate = convertTime(comment.creation_date);
+                    questionComments.textContent = `Comment: Votes: [${comment.score}] Creation date: ${convertedCommentDate}`
+
+                    //comment body
+                    var commentBody = document.createElement('div');
+                    commentBody.setAttribute('class', 'comments');
+                    listItemBody.appendChild(commentBody);
+                    commentBody.innerHTML = comment.body;
+                }
+            }
 
 
             //its answers
@@ -145,6 +191,7 @@ function get10PopularQuestions(input) {
 
                 for(answer of jsonItem.answers) {
                     var answersHeader = document.createElement('div');
+                    answersHeader.setAttribute('class', 'answerHeader');
                     listItemBody.appendChild(answersHeader);    
 
                     //answers creation date and vote
@@ -157,6 +204,22 @@ function get10PopularQuestions(input) {
                     listItemBody.appendChild(answersBody);
                     answersBody.innerHTML = answer.body;
 
+                    // for(comment of answer.comments) {
+                    //     //answers comments headers
+                    //     var answersCommentsHeader = document.createElement('div');
+                    //     answersCommentsHeader.setAttribute('class', 'answersCommentHeader');
+                    //     listItemBody.appendChild(answersCommentsHeader);    
+
+                    //     //answers comment creation date and vote
+                    //     var convertedCommentAnswerDate = convertTime(comment.creation_date);
+                    //     answersCommentsHeader.textContent = `Answer: Votes: [${comment.score}] Creation date: ${convertedconvertedCommentAnswerDateAnswerDate}`
+
+                    //     //answers comments
+                    //     var answersComments = document.createElement('div');
+                    //     answersComments.setAttribute('class', 'answersComments');
+                    //     listItemBody.appendChild(answersComments);
+                    //     answersComments.innerHTML = comment.body;
+                    // }
                     
                 }
             }
